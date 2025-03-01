@@ -69,7 +69,8 @@ def generate_page(from_path, template_path, dest_path, basepath):
     html = markdown_to_html(markdown)
     title = extract_title(markdown)
 
-    dest_content = template_content.replace("{{ Title }}", title).replace("{{ Content }}", html).replace('href="/',f'href="{basepath}').replace("src='/",f"src='{basepath}")
+    dest_content = template_content.replace("{{ Title }}", title).replace("{{ Content }}", html).replace('href="/',f'href="{basepath}').replace("src='/",f"src='{basepath}").replace('src="/',f'src="{basepath}').replace("href='/",f"href='{basepath}")
+
 
     
     # Create destination directory if it doesn't exist
